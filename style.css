@@ -1,0 +1,199 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Heading */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Container Card */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.8);  /* <== Slightly transparent white */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); /* adds a blur behind it */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    transition: background 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.01);
+}
+
+/* File Input */
+input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Special download button style */
+#downloadBtn,
+button#downloadBtn {
+    background-color: #007BFF;
+    margin-top: 20px;
+}
+#downloadBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    resize: vertical;
+}
+
+/* Section Titles */
+.section-title {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #222;
+    border-left: 5px solid #4CAF50;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Optional emoji style */
+.section-title::before {
+    content: '📌';
+    font-size: 20px;
+}
+
+/* Summary Result Wrapper */
+.results {
+    margin-top: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* === DARK MODE TOGGLE SWITCH === */
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* === DARK MODE CLASSES === */
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark .container {
+    background-color: #1e1e1e;
+}
+
+body.dark input[type="file"],
+body.dark button,
+body.dark .results {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
